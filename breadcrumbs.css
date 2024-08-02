@@ -1,0 +1,12 @@
+.breadcrumbs {
+  display: flex;
+  gap: 1em;
+
+  ::marker {
+    content: '> ';
+  }
+
+  :first-child::marker {
+    content: '';
+  }
+}
