@@ -2,5 +2,5 @@
 
 - [x] Render list 
 - [ ] Handle click
-- [ ] Add item
-- [ ] Cut from item
+- [x] Add item
+- [x] Cut from item

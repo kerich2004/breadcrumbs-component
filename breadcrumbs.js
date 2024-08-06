@@ -1,4 +1,4 @@
-function renderBreadcrumbs(selector, labels) {
+function renderBreadcrumbs(selector,id, labels) {
   const parent = document.querySelector(selector)
   const breadcrumbsEl = document.createElement('ul')
   let html = ''
@@ -10,6 +10,26 @@ function renderBreadcrumbs(selector, labels) {
 
   breadcrumbsEl.innerHTML = html
   breadcrumbsEl.className = 'breadcrumbs'
-  // breadcrumbsEl.lastElementChild.children[0].removeAttribute('href')
+  breadcrumbsEl.id = id
   parent.append(breadcrumbsEl)
 }
+
+function addBreadCrumbItem(id, label) {
+  let breadcrumb = document.getElementById(id)
+
+  if(breadcrumb) {
+    let breadcrumbsEl = document.createElement('li')
+    breadcrumb.lastElementChild.lastElementChild.setAttribute('href', '#')
+    breadcrumbsEl.innerHTML = `<a>${label}</a>`
+    
+    breadcrumb.append(breadcrumbsEl)
+  }
+
+}
+
+function deleteBreadCrumbItem(id) {
+  let breadcrumb = document.getElementById(id)
+  breadcrumb.lastElementChild.remove()
+}
+
+
